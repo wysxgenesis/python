@@ -3,6 +3,7 @@ while True:
     if ask == "y":
         print("ok")
         print("hello world")
+        break
     elif ask == "n":
         print("ok bye")
         break
