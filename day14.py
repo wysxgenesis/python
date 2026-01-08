@@ -1,8 +1,9 @@
-#goal based decision making, memory, tool usage, continuous agent loop
+
 pts = 0
 energy = 0
 rest = 0
 resource_list = []
+
 
 while True:
     goal = input("what goals do you have ")
@@ -35,6 +36,7 @@ import datetime
 fixed_time = datetime.datetime.now()
 
 while True:
+    import time
     import datetime
     now = datetime.datetime.now()
     if now >= (fixed_time + times):
@@ -51,7 +53,7 @@ while True:
             print("answer using y or n only")
     else:
         time.sleep(60)
-        continue
+        
 
 def goal_reach():
     while True:
@@ -242,7 +244,7 @@ while True:
         print("exiting loop")
         break
     else:
-        print("only use 1, 2, 3 or 4 to answer")
+        print("only use numbers 1 to 8 to answer")
     if energy >= 15:
         ask9 = input("do you want to continue resting or start revising(rest/revise) ")
         if ask9 == "revise":
@@ -253,11 +255,11 @@ while True:
             time.sleep(extra)
             
 if ask2 == "y":
-    while True:
-        import time
+        import threading
         days = 30
         hours = days * 24
         seconds = hours * 60 * 60
-        time.sleep(seconds)
-        goal_reach()
+        timer = threading.Timer(seconds, goal_reach)
+        timer.start()
+        
 
