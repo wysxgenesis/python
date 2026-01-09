@@ -259,7 +259,7 @@ if ask2 == "y":
         days = 30
         hours = days * 24
         seconds = hours * 60 * 60
-        timer = threading.Timer(seconds, goal_reach)
-        timer.start()
+        timers = threading.Timer(seconds, goal_reach)
+        timers.start()
         
 
